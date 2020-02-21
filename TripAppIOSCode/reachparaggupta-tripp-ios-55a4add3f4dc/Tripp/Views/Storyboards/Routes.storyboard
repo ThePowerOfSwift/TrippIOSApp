@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ngx-no-dY5">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ngx-no-dY5">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,6 +64,9 @@
                                 <rect key="frame" x="0.0" y="83" width="375" height="584"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mQs-3v-fjh">
+                                <rect key="frame" x="0.0" y="83" width="375" height="584"/>
+                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miv-WK-Quc">
                                 <rect key="frame" x="294" y="582" width="63" height="63"/>
                                 <constraints>
@@ -81,10 +82,14 @@
                         <color key="backgroundColor" red="0.17254901960784313" green="0.16862745098039217" blue="0.17254901960784313" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="THG-pQ-YfX" firstAttribute="bottom" secondItem="Miv-WK-Quc" secondAttribute="bottom" constant="22" id="Cov-TR-r2f"/>
+                            <constraint firstItem="mQs-3v-fjh" firstAttribute="leading" secondItem="THG-pQ-YfX" secondAttribute="leading" id="DkK-Vk-0Oe"/>
                             <constraint firstItem="Klr-hN-aFU" firstAttribute="top" secondItem="iC5-Ht-0M6" secondAttribute="top" constant="83" id="Gc3-aW-xoZ"/>
+                            <constraint firstItem="mQs-3v-fjh" firstAttribute="top" secondItem="THG-pQ-YfX" secondAttribute="top" constant="83" id="HkX-P2-E4a"/>
                             <constraint firstItem="Klr-hN-aFU" firstAttribute="leading" secondItem="THG-pQ-YfX" secondAttribute="leading" id="Mqr-e7-EOc"/>
+                            <constraint firstItem="THG-pQ-YfX" firstAttribute="trailing" secondItem="mQs-3v-fjh" secondAttribute="trailing" id="Sad-SA-x8X"/>
                             <constraint firstItem="THG-pQ-YfX" firstAttribute="bottom" secondItem="Klr-hN-aFU" secondAttribute="bottom" id="bOk-eJ-65X"/>
                             <constraint firstItem="THG-pQ-YfX" firstAttribute="trailing" secondItem="Klr-hN-aFU" secondAttribute="trailing" id="cuS-AM-L8a"/>
+                            <constraint firstItem="THG-pQ-YfX" firstAttribute="bottom" secondItem="mQs-3v-fjh" secondAttribute="bottom" id="cyJ-BD-cMs"/>
                             <constraint firstItem="THG-pQ-YfX" firstAttribute="trailing" secondItem="Miv-WK-Quc" secondAttribute="trailing" constant="18" id="pAh-ti-qDc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="THG-pQ-YfX"/>
@@ -94,7 +99,7 @@
                     <connections>
                         <outlet property="currentLocationButton" destination="Miv-WK-Quc" id="Mth-Uf-bwp"/>
                         <outlet property="locationButton" destination="Miv-WK-Quc" id="qlP-BO-etd"/>
-                        <outlet property="mapView" destination="Klr-hN-aFU" id="CeO-6S-eZw"/>
+                        <outlet property="mapView" destination="mQs-3v-fjh" id="AgX-Lb-28Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QH8-YU-VVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,7 +118,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pv6-Pw-Guk">
-                                <rect key="frame" x="0.0" y="90" width="375" height="527"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="547"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="G7k-ZR-eRY" id="1Vw-iC-hxy"/>

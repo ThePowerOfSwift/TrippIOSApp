@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import MapKit
+
 import GoogleMaps
 import NRControls
 import AMPopTip
+
 final class HomeViewController: UIViewController {
     //MARK: ------ variables/IBOutlets
     
-    @IBOutlet weak var mapView: GMSMapView!
+    //@IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var currentLocationButton: UIButton!
     var myLocation: CLLocation?
@@ -32,8 +36,8 @@ final class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.setupUI()
         addNotificationObservers()
-        self.mapView.addMapTypeToggleButton()
-        self.mapView.setMinZoom(8.0, maxZoom: 15.0)
+        //self.mapView.addMapTypeToggleButton() //xr
+        //self.mapView.setMinZoom(8.0, maxZoom: 15.0) //xr
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -72,8 +76,11 @@ final class HomeViewController: UIViewController {
     }
     private func setupUI(){
         
-        self.mapView.isMyLocationEnabled = true
+        //self.mapView.isMyLocationEnabled = true //xr
+        //self.mapView.delegate = self //xr
+        self.mapView.showsUserLocation = true
         self.mapView.delegate = self
+                
         self.showCurrentLocationOnMapAndFtechRoutes()
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.showNextTip(_:)), name: AppNotification.popTipHide, object: nil)
     }
@@ -102,7 +109,8 @@ final class HomeViewController: UIViewController {
         LocationManager.sharedManager.currentLocation(complitionHandler: {(location, error) in
             guard let _ = error else{
                 self.myLocation = location
-                self.mapView.moveMapToUserlocation(location!)
+                //self.mapView.moveMapToUserlocation(location!)//xr
+                self.mapView.moveMapTolocation(location!)
                 if let parentVC = self.parent as? RoutesBaseViewController, let topView = parentVC.topView{
                     if topView.selectedTab == .Routes{
                         self.fetchAndDrawRoutes(location!)
@@ -204,4 +212,8 @@ final class HomeViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+}
+
+extension HomeViewController : MKMapViewDelegate {
+    
 }
