@@ -27,6 +27,8 @@ class WalkthroughVC: BWWalkthroughViewController {
 
         }
         
+        //xr
+        self.pushLogin()
     }
 
     override func didReceiveMemoryWarning() {
