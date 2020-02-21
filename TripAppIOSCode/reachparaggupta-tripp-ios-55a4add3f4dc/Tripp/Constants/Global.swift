@@ -38,7 +38,7 @@ class Global {
         appDelegate.window?.rootViewController = rootViewController
     }
     
-    class func showHomeViewIfLogin(_ launchOptions: [UIApplicationLaunchOptionsKey: Any]?){        
+    class func showHomeViewIfLogin(_ launchOptions: [UIApplicationLaunchOptionsKey: Any]?){
         if AppUser.isLoginUser() {
             let rootViewController = homeStoryBoard().instantiateInitialViewController()
             appDelegate.window?.rootViewController = rootViewController
