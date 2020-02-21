@@ -171,7 +171,7 @@ extension ConfigurationManager {
     class func setAppConfiguration(_ launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
-        DatabaseHandler.setUpMigrationRealm() //xr
+        DatabaseHandler.setUpMigrationRealm()
         UIApplication.shared.statusBarStyle = .lightContent
         AppUser.populateUserFromDatabaseIfAny()
         Global.showHomeViewIfLogin(launchOptions)

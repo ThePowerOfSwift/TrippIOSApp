@@ -11,24 +11,23 @@ import BWWalkthrough
 
 class WalkthroughVC: BWWalkthroughViewController {
 
-    //@IBOutlet weak var signUpButton: RoundedBorderButton!
-    //@IBOutlet weak var signInButton: RoundedBorderButton!
-    @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var signUpButton: RoundedBorderButton!
+    @IBOutlet weak var signInButton: RoundedBorderButton!
+    //@IBOutlet weak var signUpButton: UIButton!
+    //@IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
     //MARK: UIViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.setupWalkthrough()
         
         if AppUserDefaults.value(for: .walkthrough) as? Bool != true {
             showWalkthrough()
-
         }
         
-        //xr
-        self.pushLogin()
+        //self.pushLogin()
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,15 +74,12 @@ class WalkthroughVC: BWWalkthroughViewController {
         self.add(viewController: page_fourth)
         self.add(viewController: page_fifth)
         
-        //xr
-        /*
         //-- Add character space on button
         self.signUpButton.addCharacterSpace(space: 0.0)
         self.signInButton.addCharacterSpace(space: 0.0)
         
         self.signUpButton.changeBorderColor(color: UIColor.buttonBorderColor(), borderRadius: 13.0)
         self.signInButton.changeBorderColor(color: UIColor.buttonBorderColor(), borderRadius: 13.0)
-        */
         
         if AppUser.isLoginUser() {
             self.backButton.isHidden = false
