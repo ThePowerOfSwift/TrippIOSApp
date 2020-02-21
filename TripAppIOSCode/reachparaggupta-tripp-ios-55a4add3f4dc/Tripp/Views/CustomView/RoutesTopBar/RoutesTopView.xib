@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </array>
+        <array key="SF-UI-Text-Regular.otf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RoutesTopView" customModule="Tripp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUZ-OB-HiD">
+                    <rect key="frame" x="331" y="38" width="27" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="659-zj-0MR"/>
+                        <constraint firstAttribute="width" constant="27" id="y7a-64-vDy"/>
+                    </constraints>
+                    <state key="normal" image="searchIcon"/>
+                    <connections>
+                        <action selector="toggleSearch:" destination="iN0-l3-epB" eventType="touchUpInside" id="SQh-01-JnY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4f-HU-Heo">
+                    <rect key="frame" x="7" y="33.5" width="32" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="T2u-ll-6sa"/>
+                        <constraint firstAttribute="height" constant="28" id="VH1-Hp-W7g"/>
+                    </constraints>
+                    <state key="normal" image="mapSelected"/>
+                    <connections>
+                        <action selector="mapViewTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="eah-Vg-kpv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODr-LU-v8M">
+                    <rect key="frame" x="46" y="31.5" width="32" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="WIL-GK-ESZ"/>
+                        <constraint firstAttribute="height" constant="28" id="m7W-0O-tpS"/>
+                    </constraints>
+                    <state key="normal" image="listIcon"/>
+                    <connections>
+                        <action selector="listViewTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Bcl-B2-p5g"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on any route for details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVE-HW-yd2">
+                    <rect key="frame" x="84" y="31" width="239" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="HT8-u3-7Db"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
+                    <color key="textColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 routes found close to you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vx-La-DhE" customClass="TTTAttributedLabel">
+                    <rect key="frame" x="86" y="49" width="237" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="23" id="DD0-RC-EeU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.71764705882352942" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for a state" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QkZ-0Y-4de" customClass="SearchTextField" customModule="Tripp" customModuleProvider="target">
+                    <rect key="frame" x="16" y="94" width="342" height="42"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="0.59824486301369861" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="8hU-u2-jpI"/>
+                    </constraints>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="0.59567636986301364" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My saved trips" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwK-wz-Feo" customClass="CharacterSpaceLabel" customModule="Tripp" customModuleProvider="target">
+                    <rect key="frame" x="114" y="36" width="147" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="147" id="sPW-XC-Pqj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="18"/>
+                    <color key="textColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                            <real key="value" value="2.2000000000000002"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.17254901960784313" green="0.16862745098039217" blue="0.18823529411764706" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="QkZ-0Y-4de" secondAttribute="trailing" constant="17" id="0nk-Zt-EOf"/>
+                <constraint firstItem="DwK-wz-Feo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5AO-71-Xz8"/>
+                <constraint firstItem="ODr-LU-v8M" firstAttribute="leading" secondItem="I4f-HU-Heo" secondAttribute="trailing" constant="7" id="72Y-rf-HtL"/>
+                <constraint firstItem="NVE-HW-yd2" firstAttribute="leading" secondItem="ODr-LU-v8M" secondAttribute="trailing" constant="6" id="DU3-ye-y39"/>
+                <constraint firstItem="DwK-wz-Feo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="H5T-oM-39n"/>
+                <constraint firstItem="NVE-HW-yd2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="31" id="JVK-Qb-USr"/>
+                <constraint firstAttribute="trailing" secondItem="rUZ-OB-HiD" secondAttribute="trailing" constant="17" id="S5a-MT-feg"/>
+                <constraint firstItem="QkZ-0Y-4de" firstAttribute="top" secondItem="4Vx-La-DhE" secondAttribute="bottom" constant="22" id="Uei-uc-qU7"/>
+                <constraint firstItem="4Vx-La-DhE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="49" id="Vjg-R1-whQ"/>
+                <constraint firstItem="rUZ-OB-HiD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="38" id="X3g-5o-c7B"/>
+                <constraint firstAttribute="trailing" secondItem="NVE-HW-yd2" secondAttribute="trailing" constant="52" id="Zzo-8Q-BRr"/>
+                <constraint firstItem="QkZ-0Y-4de" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="bbr-Ur-hFc"/>
+                <constraint firstItem="ODr-LU-v8M" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="31.5" id="dqz-OY-Tn9"/>
+                <constraint firstItem="I4f-HU-Heo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="33.600000000000001" id="eIQ-rU-QBE"/>
+                <constraint firstItem="4Vx-La-DhE" firstAttribute="leading" secondItem="ODr-LU-v8M" secondAttribute="trailing" constant="8" id="gvD-nK-P3v"/>
+                <constraint firstItem="rUZ-OB-HiD" firstAttribute="leading" secondItem="4Vx-La-DhE" secondAttribute="trailing" constant="8" id="sHN-hc-482"/>
+                <constraint firstItem="I4f-HU-Heo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="7" id="udC-AA-Z56"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="U8p-4C-iiR"/>
+            <connections>
+                <outlet property="infoLabel" destination="NVE-HW-yd2" id="Qh5-My-b74"/>
+                <outlet property="listIcon" destination="ODr-LU-v8M" id="5Hl-nk-XvQ"/>
+                <outlet property="mapIcon" destination="I4f-HU-Heo" id="Zvq-au-a2o"/>
+                <outlet property="routesCountLabel" destination="4Vx-La-DhE" id="YDO-Zy-LY5"/>
+                <outlet property="saveTripslabel" destination="DwK-wz-Feo" id="y3C-Mi-Usb"/>
+                <outlet property="searchIcon" destination="rUZ-OB-HiD" id="I2D-dw-9yv"/>
+                <outlet property="searchTextFleid" destination="QkZ-0Y-4de" id="Z6p-ja-VTt"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="-98.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="listIcon" width="20" height="17"/>
+        <image name="mapSelected" width="30" height="19"/>
+        <image name="searchIcon" width="27" height="27"/>
+    </resources>
+</document>

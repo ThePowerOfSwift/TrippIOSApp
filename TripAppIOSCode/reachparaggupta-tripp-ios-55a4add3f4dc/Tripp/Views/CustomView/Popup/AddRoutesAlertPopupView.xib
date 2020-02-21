@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+        <array key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddRoutesAlertPopupView" customModule="Tripp" customModuleProvider="target">
+            <connections>
+                <outlet property="actionButton" destination="Te9-2W-UFu" id="yHF-Ct-9it"/>
+                <outlet property="bottomView" destination="2DC-wq-lU3" id="t1x-NK-Mgh"/>
+                <outlet property="messageLabel" destination="Nhp-LF-0ar" id="jCq-hq-FR8"/>
+                <outlet property="questionLabel" destination="t8p-Ws-xIR" id="Z8r-0X-oux"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="352" height="444"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiI-NB-QBP">
+                    <rect key="frame" x="108" y="38" width="135" height="135"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icWarningPopup" translatesAutoresizingMaskIntoConstraints="NO" id="XW8-av-TLy">
+                            <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="67.5"/>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="XW8-av-TLy" firstAttribute="centerX" secondItem="wiI-NB-QBP" secondAttribute="centerX" id="8DM-1z-dl2"/>
+                        <constraint firstAttribute="width" constant="135" id="H4Y-MQ-5NQ"/>
+                        <constraint firstAttribute="height" constant="135" id="IWY-7U-cnM"/>
+                        <constraint firstItem="XW8-av-TLy" firstAttribute="width" secondItem="wiI-NB-QBP" secondAttribute="width" id="aSh-SH-j36"/>
+                        <constraint firstItem="XW8-av-TLy" firstAttribute="height" secondItem="wiI-NB-QBP" secondAttribute="height" id="bef-Xm-ZYN"/>
+                        <constraint firstItem="XW8-av-TLy" firstAttribute="centerY" secondItem="wiI-NB-QBP" secondAttribute="centerY" id="paG-op-6e4"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="67.5"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warning message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUM-gj-IK6" customClass="CharacterSpaceLabel" customModule="Tripp" customModuleProvider="target">
+                    <rect key="frame" x="111" y="189" width="131" height="20.5"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="14.899999618530273"/>
+                    <color key="textColor" red="0.0" green="0.71764705882352942" blue="0.91764705882352937" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                            <real key="value" value="-0.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By removing this trip, you will lose all the information created." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhp-LF-0ar">
+                    <rect key="frame" x="16" y="221.5" width="321" height="49.5"/>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to remove it?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8p-Ws-xIR" customClass="CharacterSpaceLabel" customModule="Tripp" customModuleProvider="target">
+                    <rect key="frame" x="32.5" y="305" width="288" height="22"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.71764705882352942" blue="0.91764705882352937" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                            <real key="value" value="-0.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DC-wq-lU3">
+                    <rect key="frame" x="0.0" y="377" width="352" height="66.5"/>
+                    <subviews>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jh0-PB-JuR">
+                            <rect key="frame" x="0.0" y="0.0" width="176" height="66.5"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="18"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="ipk-Sl-YBt"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te9-2W-UFu">
+                            <rect key="frame" x="176" y="0.0" width="176" height="66.5"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="18"/>
+                            <state key="normal" title="Remove">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionButtonTapped:" destination="-1" eventType="touchUpInside" id="3Kf-Fj-fhV"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Te9-2W-UFu" firstAttribute="width" secondItem="Jh0-PB-JuR" secondAttribute="width" id="4h8-xy-c75"/>
+                        <constraint firstAttribute="bottom" secondItem="Jh0-PB-JuR" secondAttribute="bottom" id="6fI-Ad-zzg"/>
+                        <constraint firstAttribute="trailing" secondItem="Te9-2W-UFu" secondAttribute="trailing" id="9mm-ow-tZN"/>
+                        <constraint firstItem="Te9-2W-UFu" firstAttribute="leading" secondItem="Jh0-PB-JuR" secondAttribute="trailing" id="Fuz-BF-kEA"/>
+                        <constraint firstItem="Jh0-PB-JuR" firstAttribute="top" secondItem="2DC-wq-lU3" secondAttribute="top" id="Kzw-uz-h1w"/>
+                        <constraint firstAttribute="height" constant="66.5" id="MJz-BU-Kwd"/>
+                        <constraint firstAttribute="bottom" secondItem="Te9-2W-UFu" secondAttribute="bottom" id="Tpc-dz-6sA"/>
+                        <constraint firstItem="Te9-2W-UFu" firstAttribute="top" secondItem="2DC-wq-lU3" secondAttribute="top" id="W31-6B-c5C"/>
+                        <constraint firstItem="Jh0-PB-JuR" firstAttribute="leading" secondItem="2DC-wq-lU3" secondAttribute="leading" id="cz2-hW-naE"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="t8p-Ws-xIR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="76u-V8-5jD"/>
+                <constraint firstItem="wiI-NB-QBP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8RZ-tb-Qsm"/>
+                <constraint firstItem="LUM-gj-IK6" firstAttribute="top" secondItem="wiI-NB-QBP" secondAttribute="bottom" constant="16" id="COg-ZT-ODe"/>
+                <constraint firstItem="wiI-NB-QBP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="38" id="K4y-jk-Xdd"/>
+                <constraint firstItem="2DC-wq-lU3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TKv-rx-YVP"/>
+                <constraint firstItem="LUM-gj-IK6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="X6m-Vj-lny"/>
+                <constraint firstAttribute="trailing" secondItem="2DC-wq-lU3" secondAttribute="trailing" id="aVx-QM-U7B"/>
+                <constraint firstAttribute="bottom" secondItem="2DC-wq-lU3" secondAttribute="bottom" id="bjU-bo-QJE"/>
+                <constraint firstItem="t8p-Ws-xIR" firstAttribute="top" secondItem="Nhp-LF-0ar" secondAttribute="bottom" constant="34" id="eX9-B0-2in"/>
+                <constraint firstItem="Nhp-LF-0ar" firstAttribute="top" secondItem="LUM-gj-IK6" secondAttribute="bottom" constant="12" id="g9g-Ed-Lhb"/>
+                <constraint firstItem="Nhp-LF-0ar" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="tMl-6k-dSK"/>
+                <constraint firstAttribute="trailing" secondItem="Nhp-LF-0ar" secondAttribute="trailing" constant="15" id="wbL-3V-rU8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33" y="-86"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icWarningPopup" width="133" height="135"/>
+    </resources>
+</document>

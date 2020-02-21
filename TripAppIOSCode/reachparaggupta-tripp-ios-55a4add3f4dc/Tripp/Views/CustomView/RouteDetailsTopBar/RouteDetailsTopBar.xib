@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+        <array key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="RouteDetailsTopBar" customModule="Tripp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjQ-sh-qyA">
+                    <rect key="frame" x="11" y="33" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="D1z-1H-Nom"/>
+                        <constraint firstAttribute="width" constant="28" id="vsu-DT-Atz"/>
+                    </constraints>
+                    <state key="normal" image="back_button"/>
+                </button>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="mapSelected" translatesAutoresizingMaskIntoConstraints="NO" id="di3-Sn-vyR">
+                    <rect key="frame" x="53.5" y="40" width="30" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="XfX-vX-c2E"/>
+                        <constraint firstAttribute="height" constant="19" id="ngJ-lT-jbt"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Xy-SR-05e">
+                    <rect key="frame" x="276" y="23" width="2" height="59"/>
+                    <color key="backgroundColor" red="0.23137254901960785" green="0.24313725490196078" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="59" id="GU6-Ok-ZvM"/>
+                        <constraint firstAttribute="width" constant="2" id="trw-QR-gj8"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFv-em-Dnd">
+                    <rect key="frame" x="332" y="33" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="YYV-rX-E4d"/>
+                        <constraint firstAttribute="width" constant="25" id="Yvz-9b-Ez3"/>
+                    </constraints>
+                    <state key="normal" image="icShareButton"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7I6-3t-Iqf">
+                    <rect key="frame" x="294" y="33" width="19" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="PB0-1J-j97"/>
+                        <constraint firstAttribute="width" constant="19" id="Qex-aB-AZ9"/>
+                    </constraints>
+                    <state key="normal" image="icWishList"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route Name 01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxu-CP-5oz">
+                    <rect key="frame" x="95" y="25" width="173" height="26"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="19"/>
+                    <color key="textColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State Name XX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZg-bn-9NT">
+                    <rect key="frame" x="96" y="53" width="173" height="22"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="16"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.17254901960784313" green="0.16862745098039217" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="LjQ-sh-qyA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="33" id="4xu-og-s8s"/>
+                <constraint firstItem="sFv-em-Dnd" firstAttribute="leading" secondItem="7I6-3t-Iqf" secondAttribute="trailing" constant="19" id="6Qm-yT-6AV"/>
+                <constraint firstItem="7I6-3t-Iqf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="33" id="E4R-Mx-ncl"/>
+                <constraint firstItem="qxu-CP-5oz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="FQh-zv-R4E"/>
+                <constraint firstAttribute="trailing" secondItem="sFv-em-Dnd" secondAttribute="trailing" constant="18" id="Gyn-pv-Fz6"/>
+                <constraint firstItem="di3-Sn-vyR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="IQc-Zt-7Zl"/>
+                <constraint firstItem="ZZg-bn-9NT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="96" id="ReO-OU-N8K"/>
+                <constraint firstItem="sFv-em-Dnd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="33" id="RiM-ny-8bS"/>
+                <constraint firstItem="2Xy-SR-05e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="23" id="b2g-Tg-ZDG"/>
+                <constraint firstItem="2Xy-SR-05e" firstAttribute="leading" secondItem="ZZg-bn-9NT" secondAttribute="trailing" constant="7" id="bCA-5g-uZT"/>
+                <constraint firstItem="ZZg-bn-9NT" firstAttribute="top" secondItem="qxu-CP-5oz" secondAttribute="bottom" constant="2" id="gc1-g2-jRH"/>
+                <constraint firstItem="2Xy-SR-05e" firstAttribute="leading" secondItem="qxu-CP-5oz" secondAttribute="trailing" constant="8" id="iY8-4I-19S"/>
+                <constraint firstAttribute="trailing" secondItem="2Xy-SR-05e" secondAttribute="trailing" constant="97" id="jey-X5-Onc"/>
+                <constraint firstItem="di3-Sn-vyR" firstAttribute="leading" secondItem="LjQ-sh-qyA" secondAttribute="trailing" constant="14.5" id="mTP-bf-Yni"/>
+                <constraint firstItem="LjQ-sh-qyA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="11" id="xUr-08-pkC"/>
+                <constraint firstItem="qxu-CP-5oz" firstAttribute="leading" secondItem="di3-Sn-vyR" secondAttribute="trailing" constant="11.5" id="yU7-Oc-3aG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addToWishListButton" destination="7I6-3t-Iqf" id="Kq8-0t-2rL"/>
+                <outlet property="backButton" destination="LjQ-sh-qyA" id="tjN-8g-7dF"/>
+                <outlet property="shareButton" destination="sFv-em-Dnd" id="0DU-QU-hZs"/>
+                <outlet property="subTitleLabel" destination="ZZg-bn-9NT" id="5pH-NG-JS3"/>
+                <outlet property="titleLabel" destination="qxu-CP-5oz" id="FFk-ab-WUi"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="54"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_button" width="20" height="20"/>
+        <image name="icShareButton" width="21" height="20"/>
+        <image name="icWishList" width="19" height="24"/>
+        <image name="mapSelected" width="30" height="19"/>
+    </resources>
+</document>

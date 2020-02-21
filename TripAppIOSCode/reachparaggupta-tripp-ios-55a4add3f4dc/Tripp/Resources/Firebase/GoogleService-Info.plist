@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>52583693867-b71i1mj6afga93n27db5rlm792kcii01.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.52583693867-b71i1mj6afga93n27db5rlm792kcii01</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC6fte6HLbbo9dVIhnMV48HVN3ocLfqJhQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>52583693867</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.tripps.Tripp</string>
+	<key>PROJECT_ID</key>
+	<string>tripp-45920</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tripp-45920.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<true/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:52583693867:ios:825b6388da95970c</string>
+	<key>DATABASE_URL</key>
+	<string>https://tripp-45920.firebaseio.com</string>
+</dict>
+</plist>

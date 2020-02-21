@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="F49-vb-iGw">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Trips View Controller-->
+        <scene sceneID="ukg-Er-tcb">
+            <objects>
+                <viewController storyboardIdentifier="MyTripsViewController" id="F49-vb-iGw" customClass="MyTripsViewController" customModule="Tripp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s5p-Hw-KFd"/>
+                        <viewControllerLayoutGuide type="bottom" id="QVf-ux-K8x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RaU-d7-Jew">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tN-u4-Cfm">
+                                <rect key="frame" x="18" y="576" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="jLI-5y-isV"/>
+                                    <constraint firstAttribute="width" constant="69" id="qev-OF-pV1"/>
+                                </constraints>
+                                <state key="normal" image="filterIcon"/>
+                                <connections>
+                                    <action selector="filterTapped:" destination="F49-vb-iGw" eventType="touchUpInside" id="LuX-hH-Bhn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5tN-u4-Cfm" firstAttribute="leading" secondItem="RaU-d7-Jew" secondAttribute="leading" constant="18" id="8Eb-pv-ZWa"/>
+                            <constraint firstItem="QVf-ux-K8x" firstAttribute="top" secondItem="5tN-u4-Cfm" secondAttribute="bottom" constant="22" id="uYb-vh-MPg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="filterButton" destination="5tN-u4-Cfm" id="4l7-3h-jha"/>
+                        <outlet property="filterButtonConstrant" destination="uYb-vh-MPg" id="UU3-OW-4TR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xht-oE-Xsu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82" y="119"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="filterIcon" width="69" height="69"/>
+    </resources>
+</document>

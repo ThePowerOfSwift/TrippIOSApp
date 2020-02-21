@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RouteTableViewCell" rowHeight="118" id="KGk-i7-Jjw" customClass="RouteTableViewCell" customModule="Tripp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="117.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tripPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="unU-27-81w">
+                        <rect key="frame" x="8" y="14.5" width="89" height="89"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="89" id="EdT-F9-93U"/>
+                            <constraint firstAttribute="height" constant="89" id="bSF-Qh-ESj"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <real key="value" value="4.4000000000000004"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route Name 01" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-rG-tuE" customClass="CharacterSpaceLabel" customModule="Tripp" customModuleProvider="target">
+                        <rect key="frame" x="105" y="14" width="217" height="25"/>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                <real key="value" value="-0.80000000000000004"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/03/17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8V-Kt-t3a" customClass="CharacterSpaceLabel" customModule="Tripp" customModuleProvider="target">
+                        <rect key="frame" x="105" y="39" width="58.5" height="19.5"/>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="deviceRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                <real key="value" value="-0.5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tripImagesCount" translatesAutoresizingMaskIntoConstraints="NO" id="50T-v7-Q3g">
+                        <rect key="frame" x="105" y="86" width="17" height="17"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tripVideosCount" translatesAutoresizingMaskIntoConstraints="NO" id="Vz8-PI-9wG">
+                        <rect key="frame" x="182.5" y="86" width="16" height="16"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmh-nr-DIA" customClass="CharacterSpaceLabel" customModule="Tripp" customModuleProvider="target">
+                        <rect key="frame" x="124" y="86" width="53.5" height="18"/>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="deviceRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                <real key="value" value="-0.5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Videos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVF-I8-GKi" customClass="CharacterSpaceLabel" customModule="Tripp" customModuleProvider="target">
+                        <rect key="frame" x="204.5" y="85" width="51.5" height="18"/>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="deviceRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                <real key="value" value="-0.5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5S-29-5oS" customClass="RoundedBorderButton" customModule="Tripp" customModuleProvider="target">
+                        <rect key="frame" x="273" y="82" width="87" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="9gQ-IX-aut"/>
+                            <constraint firstAttribute="width" constant="87" id="X9f-ef-1By"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                        <state key="normal" title="Details"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6h-BK-EMC">
+                        <rect key="frame" x="330" y="17" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="I2b-IS-dx1"/>
+                            <constraint firstAttribute="height" constant="25" id="gzO-XP-4cU"/>
+                        </constraints>
+                        <state key="normal" image="shareIcon"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XwS-zO-tOy">
+                        <rect key="frame" x="0.0" y="116" width="375" height="2"/>
+                        <color key="backgroundColor" red="0.0" green="0.71764705882352942" blue="0.91764705882352937" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="Ag4-lE-AzE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="unU-27-81w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14.5" id="217-Fz-eP6"/>
+                    <constraint firstItem="50T-v7-Q3g" firstAttribute="bottom" secondItem="unU-27-81w" secondAttribute="bottom" id="3mm-Qu-D5M"/>
+                    <constraint firstAttribute="trailing" secondItem="h5S-29-5oS" secondAttribute="trailing" constant="15" id="A86-xp-w5K"/>
+                    <constraint firstItem="A6h-BK-EMC" firstAttribute="leading" secondItem="FYW-rG-tuE" secondAttribute="trailing" constant="8" id="BPh-Tp-dT6"/>
+                    <constraint firstItem="A6h-BK-EMC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="FTm-7r-PaU"/>
+                    <constraint firstItem="gmh-nr-DIA" firstAttribute="centerY" secondItem="50T-v7-Q3g" secondAttribute="centerY" id="GgE-gp-Jxf"/>
+                    <constraint firstAttribute="bottom" secondItem="h5S-29-5oS" secondAttribute="bottom" constant="11.5" id="JTX-FH-5P5"/>
+                    <constraint firstItem="D8V-Kt-t3a" firstAttribute="top" secondItem="FYW-rG-tuE" secondAttribute="bottom" id="L13-Ny-jSr"/>
+                    <constraint firstItem="unU-27-81w" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="NDA-R9-YwI"/>
+                    <constraint firstAttribute="bottom" secondItem="XwS-zO-tOy" secondAttribute="bottom" id="NdH-rq-vGG"/>
+                    <constraint firstItem="FYW-rG-tuE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="RFM-HS-anO"/>
+                    <constraint firstItem="Vz8-PI-9wG" firstAttribute="top" secondItem="50T-v7-Q3g" secondAttribute="top" id="TdV-Za-02J"/>
+                    <constraint firstItem="D8V-Kt-t3a" firstAttribute="leading" secondItem="FYW-rG-tuE" secondAttribute="leading" id="YQC-h6-1pT"/>
+                    <constraint firstAttribute="trailing" secondItem="XwS-zO-tOy" secondAttribute="trailing" id="eDt-T2-De7"/>
+                    <constraint firstItem="DVF-I8-GKi" firstAttribute="leading" secondItem="Vz8-PI-9wG" secondAttribute="trailing" constant="6" id="eT5-Lp-JKZ"/>
+                    <constraint firstItem="FYW-rG-tuE" firstAttribute="leading" secondItem="unU-27-81w" secondAttribute="trailing" constant="8" id="hMV-Av-f05"/>
+                    <constraint firstItem="Vz8-PI-9wG" firstAttribute="leading" secondItem="gmh-nr-DIA" secondAttribute="trailing" constant="5" id="hnr-Sp-ktB"/>
+                    <constraint firstItem="gmh-nr-DIA" firstAttribute="leading" secondItem="50T-v7-Q3g" secondAttribute="trailing" constant="2" id="icj-nF-zLh"/>
+                    <constraint firstItem="XwS-zO-tOy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="m23-ae-SGy"/>
+                    <constraint firstItem="DVF-I8-GKi" firstAttribute="centerY" secondItem="Vz8-PI-9wG" secondAttribute="centerY" id="mRh-7p-Jdp"/>
+                    <constraint firstItem="50T-v7-Q3g" firstAttribute="leading" secondItem="unU-27-81w" secondAttribute="trailing" constant="8" id="oHg-90-hzK"/>
+                    <constraint firstAttribute="trailing" secondItem="A6h-BK-EMC" secondAttribute="trailing" constant="20" id="q5f-nS-pjf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="detailsButton" destination="h5S-29-5oS" id="sIg-Ad-mQk"/>
+                <outlet property="imageIcon" destination="unU-27-81w" id="Lah-ym-FFf"/>
+                <outlet property="imagesCountLabel" destination="gmh-nr-DIA" id="Q1e-la-I4I"/>
+                <outlet property="routeDateLabel" destination="D8V-Kt-t3a" id="JXt-5a-M9S"/>
+                <outlet property="routeNameLabel" destination="FYW-rG-tuE" id="dLe-aq-7ZC"/>
+                <outlet property="shareButton" destination="A6h-BK-EMC" id="Xwl-Io-Pge"/>
+                <outlet property="videosCountLabel" destination="DVF-I8-GKi" id="mMM-LG-hCk"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="91"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="shareIcon" width="25" height="25"/>
+        <image name="tripImagesCount" width="17" height="17"/>
+        <image name="tripPlaceholder" width="89" height="89"/>
+        <image name="tripVideosCount" width="16" height="16"/>
+    </resources>
+</document>

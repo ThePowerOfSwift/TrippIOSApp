@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoadTypeFilterCollectionViewCell" id="ER5-z6-MYa" customClass="RoadTypeFilterCollectionViewCell" customModule="Tripp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="187.5" height="113"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="187.5" height="113"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="completedRoad" translatesAutoresizingMaskIntoConstraints="NO" id="Ehj-8K-8LC">
+                        <rect key="frame" x="70.5" y="23.5" width="47" height="56"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="56" id="3zF-Ip-Fqg"/>
+                            <constraint firstAttribute="width" constant="47" id="fN0-Bh-H3s"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgV-eF-LKo" customClass="CharacterSpaceLabel" customModule="Tripp" customModuleProvider="target">
+                        <rect key="frame" x="39.5" y="80" width="110" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="110" id="GMR-mo-eIo"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                        <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="0.52000000000000002" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                <real key="value" value="1.5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icSelectedFilter" translatesAutoresizingMaskIntoConstraints="NO" id="WdK-yX-HpE">
+                        <rect key="frame" x="120.5" y="5" width="26" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="5ER-yl-vTz"/>
+                            <constraint firstAttribute="height" constant="26" id="8X8-wP-ylv"/>
+                        </constraints>
+                    </imageView>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zkn-tM-HfG">
+                        <rect key="frame" x="43.5" y="5" width="14" height="14"/>
+                        <color key="backgroundColor" red="0.97254901959999995" green="0.28627450980000002" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="aP5-3f-pef"/>
+                            <constraint firstAttribute="width" constant="14" id="vzd-y3-Ma3"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="7"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSo-vQ-ZrU">
+                        <rect key="frame" x="186.5" y="36.5" width="1" height="40"/>
+                        <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="X7A-1k-aCI"/>
+                            <constraint firstAttribute="width" constant="1" id="kqO-iv-O3d"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="WdK-yX-HpE" firstAttribute="top" secondItem="ER5-z6-MYa" secondAttribute="top" constant="5" id="3lS-rD-dah"/>
+                <constraint firstItem="WdK-yX-HpE" firstAttribute="leading" secondItem="Ehj-8K-8LC" secondAttribute="trailing" constant="3" id="9zV-0w-FxV"/>
+                <constraint firstItem="Ehj-8K-8LC" firstAttribute="centerX" secondItem="ER5-z6-MYa" secondAttribute="centerX" id="CMq-Sq-uPJ"/>
+                <constraint firstAttribute="trailing" secondItem="JSo-vQ-ZrU" secondAttribute="trailing" id="E6A-cF-6WO"/>
+                <constraint firstItem="JSo-vQ-ZrU" firstAttribute="centerY" secondItem="ER5-z6-MYa" secondAttribute="centerY" id="YI7-eS-8fL"/>
+                <constraint firstItem="Ehj-8K-8LC" firstAttribute="centerY" secondItem="ER5-z6-MYa" secondAttribute="centerY" constant="-5" id="hXw-Ks-Nbj"/>
+                <constraint firstItem="vgV-eF-LKo" firstAttribute="centerX" secondItem="ER5-z6-MYa" secondAttribute="centerX" id="ib1-RE-hlZ"/>
+                <constraint firstItem="vgV-eF-LKo" firstAttribute="top" secondItem="Ehj-8K-8LC" secondAttribute="bottom" constant="0.5" id="k9b-WT-lqM"/>
+                <constraint firstItem="Ehj-8K-8LC" firstAttribute="leading" secondItem="Zkn-tM-HfG" secondAttribute="trailing" constant="13" id="pQ0-RX-8lY"/>
+                <constraint firstItem="Zkn-tM-HfG" firstAttribute="top" secondItem="WdK-yX-HpE" secondAttribute="top" id="wCb-f3-v14"/>
+            </constraints>
+            <size key="customSize" width="86" height="75"/>
+            <connections>
+                <outlet property="colorView" destination="Zkn-tM-HfG" id="eCO-h2-Tj2"/>
+                <outlet property="logoImageView" destination="Ehj-8K-8LC" id="3LA-IR-y7S"/>
+                <outlet property="textLabel" destination="vgV-eF-LKo" id="J8P-3w-rk7"/>
+                <outlet property="tickIcon" destination="WdK-yX-HpE" id="PcQ-nr-zFH"/>
+            </connections>
+            <point key="canvasLocation" x="21" y="-62.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="completedRoad" width="47" height="56"/>
+        <image name="icSelectedFilter" width="26" height="26"/>
+    </resources>
+</document>

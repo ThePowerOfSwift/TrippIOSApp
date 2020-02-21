@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="c0U-C5-Ele" customClass="TripWaypointCardTipView" customModule="Tripp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="232"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IcLongPressTip" translatesAutoresizingMaskIntoConstraints="NO" id="Llh-3D-Jcs">
+                    <rect key="frame" x="38" y="35" width="32" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="JkY-fd-xbj"/>
+                        <constraint firstAttribute="height" constant="49" id="fyc-va-alz"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deep press to drag and move the cards" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYB-Qd-q8o">
+                    <rect key="frame" x="91" y="35" width="243" height="44"/>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                    <color key="textColor" red="0.21960784310000001" green="0.2274509804" blue="0.2470588235" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ctv-xN-L8C">
+                    <rect key="frame" x="105" y="175" width="51" height="31"/>
+                    <color key="backgroundColor" red="0.76470588240000004" green="0.81568627449999997" blue="0.80392156859999997" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="Uzi-1h-VOd"/>
+                        <constraint firstAttribute="width" constant="49" id="Wd6-GF-xFQ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="15.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="switchValueChanged:" destination="c0U-C5-Ele" eventType="valueChanged" id="irk-aM-7jU"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I ve,Got it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAo-L4-vgK">
+                    <rect key="frame" x="165" y="174" width="77" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="77" id="W0z-JV-ibd"/>
+                        <constraint firstAttribute="height" constant="21" id="tzf-4Y-8gw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.71764705880000002" blue="0.91764705879999997" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IcSwipeLeftTip" translatesAutoresizingMaskIntoConstraints="NO" id="GGI-Ia-17Y">
+                    <rect key="frame" x="38" y="106" width="32" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="HHN-Ln-eKe"/>
+                        <constraint firstAttribute="width" constant="32" id="zqa-Kh-nrt"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slide left to delete any card" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW2-cQ-Jbn">
+                    <rect key="frame" x="91" y="106" width="202" height="22"/>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                    <color key="textColor" red="0.21960784310000001" green="0.2274509804" blue="0.2470588235" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WW2-cQ-Jbn" firstAttribute="top" secondItem="CYB-Qd-q8o" secondAttribute="bottom" constant="27" id="7rk-Hb-sG3"/>
+                <constraint firstItem="Llh-3D-Jcs" firstAttribute="top" secondItem="c0U-C5-Ele" secondAttribute="top" constant="35" id="9F8-G1-JDl"/>
+                <constraint firstItem="WW2-cQ-Jbn" firstAttribute="leading" secondItem="GGI-Ia-17Y" secondAttribute="trailing" constant="21" id="HGV-ka-99d"/>
+                <constraint firstItem="GGI-Ia-17Y" firstAttribute="leading" secondItem="c0U-C5-Ele" secondAttribute="leading" constant="38" id="Ja0-wm-e21"/>
+                <constraint firstAttribute="trailing" secondItem="CYB-Qd-q8o" secondAttribute="trailing" constant="16" id="Ljw-4S-TZ1"/>
+                <constraint firstItem="HAo-L4-vgK" firstAttribute="leading" secondItem="ctv-xN-L8C" secondAttribute="trailing" constant="11" id="P7N-Vh-DIZ"/>
+                <constraint firstItem="CYB-Qd-q8o" firstAttribute="top" secondItem="c0U-C5-Ele" secondAttribute="top" constant="35" id="RV3-KJ-aOJ"/>
+                <constraint firstItem="GGI-Ia-17Y" firstAttribute="top" secondItem="Llh-3D-Jcs" secondAttribute="bottom" constant="22" id="cZT-6n-CtY"/>
+                <constraint firstItem="CYB-Qd-q8o" firstAttribute="leading" secondItem="Llh-3D-Jcs" secondAttribute="trailing" constant="21" id="ebk-hN-qoj"/>
+                <constraint firstAttribute="bottom" secondItem="ctv-xN-L8C" secondAttribute="bottom" constant="26" id="fdx-uh-Tbl"/>
+                <constraint firstAttribute="bottom" secondItem="HAo-L4-vgK" secondAttribute="bottom" constant="37" id="gHd-dq-oyE"/>
+                <constraint firstItem="Llh-3D-Jcs" firstAttribute="leading" secondItem="c0U-C5-Ele" secondAttribute="leading" constant="38" id="pdl-3v-I27"/>
+                <constraint firstItem="ctv-xN-L8C" firstAttribute="centerX" secondItem="c0U-C5-Ele" secondAttribute="centerX" constant="-45.5" id="s5N-Aj-vVj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="messageLabel" destination="CYB-Qd-q8o" id="4Le-SH-RlP"/>
+                <outlet property="messageLabel2" destination="WW2-cQ-Jbn" id="rr9-M1-gb5"/>
+                <outlet property="switchControl" destination="ctv-xN-L8C" id="RO4-4x-HUT"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="53"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="IcLongPressTip" width="32" height="49"/>
+        <image name="IcSwipeLeftTip" width="37" height="42"/>
+    </resources>
+</document>
