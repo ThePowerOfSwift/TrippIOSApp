@@ -49,34 +49,12 @@ extension MKMapView {
         self.addAnnotation(annotationView)*/
        }
     
-    func drawRoute(route: Route){
-        
-        /*if route.drivingMode == TripType.Aerial.rawValue{
-            self.drawAerialTrip(route, shouldClear: false)
-        }else if route.drivingMode == TripType.Sea.rawValue{
-            self.drawSeaTripWithoutClearMap(route)
-        }else if route.drivingMode == TripType.Road.rawValue{
-            if route.role == UserRole.Admin.rawValue{
-                self.drawTrip(route: route, color: route.routeColor())
-            }else if route.role == UserRole.Biker.rawValue{
-                self.drawTrip(route: route, color: UIColor.tripColor())
-            }
-        }*/
-        self.removeOverlays(self.overlays)
-        crumbPathRenderer = nil
-        self.addOverlay(self.crumbs!, level: .aboveRoads)
-        
-        let r = self.crumbs!.boundingMapRect
-        var pts: [MKMapPoint] = [
-            MKMapPoint(x: r.minX, y: r.minY),
-            MKMapPoint(x: r.minX, y: r.maxY),
-            MKMapPoint(x: r.maxX, y: r.maxY),
-            MKMapPoint(x: r.maxX, y: r.minY),
-        ]
-        let count = pts.count
-        let boundingMapRectOverlay = MKPolygon(points: &pts, count: count)
-        self.map.addOverlay(boundingMapRectOverlay, level: .aboveRoads)
-    }
-}
+    func addPlaceWishMarker(_ wish: Place) {
+           /*let marker = PlaceWishMarker(position: wish.coordinate())
+           marker.placeWish = wish
+           marker.icon = wish.isMarkedAsComplete == 0 ? UIImage(named: starMarkerBlue) : UIImage(named: starMarkerGreen)
+           marker.map = self*/
+       }
+   }
 
 

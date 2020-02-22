@@ -164,6 +164,8 @@
 		4FE830FA1F1F614200730A24 /* AddTripNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE830F91F1F614200730A24 /* AddTripNameViewController.swift */; };
 		4FF563B91F0A5ACA00BD8494 /* AppDelegate+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF563B81F0A5ACA00BD8494 /* AppDelegate+Notification.swift */; };
 		8899D83D24006468005C6ADC /* MKMapView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899D83C24006468005C6ADC /* MKMapView+Extensions.swift */; };
+		88D1F8D72400D148006F1163 /* CrumbPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D1F8D52400D147006F1163 /* CrumbPath.swift */; };
+		88D1F8D82400D148006F1163 /* CrumbPathRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D1F8D62400D148006F1163 /* CrumbPathRenderer.swift */; };
 		DD4AB26A1FB410DC00E0A32B /* OfflineRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4AB2691FB410DC00E0A32B /* OfflineRoute.swift */; };
 		DD980CC31FB1B3E400B10614 /* CustomPageControlImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD980CC21FB1B3E300B10614 /* CustomPageControlImage.swift */; };
 		DDD2A6F51FB98F4200E6CA8B /* SyncOfflineOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD2A6F41FB98F4200E6CA8B /* SyncOfflineOperation.swift */; };
@@ -532,6 +534,8 @@
 		52F5E1D5DA868E2F35036E0C /* Pods-Tripp.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tripp.staging.xcconfig"; path = "Pods/Target Support Files/Pods-Tripp/Pods-Tripp.staging.xcconfig"; sourceTree = "<group>"; };
 		5A4FB99B91D04EB09CC943E1 /* Pods_Tripp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tripp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8899D83C24006468005C6ADC /* MKMapView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extensions.swift"; sourceTree = "<group>"; };
+		88D1F8D52400D147006F1163 /* CrumbPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrumbPath.swift; sourceTree = "<group>"; };
+		88D1F8D62400D148006F1163 /* CrumbPathRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrumbPathRenderer.swift; sourceTree = "<group>"; };
 		B609FE4FE42C919A1411F12F /* Pods-Tripp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tripp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tripp/Pods-Tripp.debug.xcconfig"; sourceTree = "<group>"; };
 		CAFBD9033A2A6CE1F15FB4E5 /* Pods-Tripp.qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tripp.qa.xcconfig"; path = "Pods/Target Support Files/Pods-Tripp/Pods-Tripp.qa.xcconfig"; sourceTree = "<group>"; };
 		DD4AB2691FB410DC00E0A32B /* OfflineRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineRoute.swift; sourceTree = "<group>"; };
@@ -1255,6 +1259,8 @@
 		F3275CEB1EEFF1C90021E953 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				88D1F8D52400D147006F1163 /* CrumbPath.swift */,
+				88D1F8D62400D148006F1163 /* CrumbPathRenderer.swift */,
 				8899D83C24006468005C6ADC /* MKMapView+Extensions.swift */,
 				F34C623C1F2B433000F27074 /* GSMMapView+Extension.swift */,
 				F3B8968D1F3DB3BE009C3FC8 /* GMSMarker+Addition.swift */,
@@ -2546,6 +2552,7 @@
 				F3275D5F1EEFF3E00021E953 /* UIView+Glow.swift in Sources */,
 				F378136F1EF0E63200E2CB7F /* RoundedBorderButton.swift in Sources */,
 				F3275D3A1EEFF3CE0021E953 /* Utils.swift in Sources */,
+				88D1F8D72400D148006F1163 /* CrumbPath.swift in Sources */,
 				4F2A90641F7B63B8008ED0EF /* ConfigurationManager.swift in Sources */,
 				F3275D561EEFF3E00021E953 /* UIColor+AppDefines.swift in Sources */,
 				F3FAF1801EFA6BD30010A5BA /* DeepLinking.swift in Sources */,
@@ -2562,6 +2569,7 @@
 				F3A9765D1F25CE77001FD1CC /* RoundedButton.swift in Sources */,
 				F34C629C1F2B4E1800F27074 /* AWSImagesmanager.swift in Sources */,
 				4FC9005E1F4E9C600065DDD6 /* LiveTripMediaViewController+CollectionView.swift in Sources */,
+				88D1F8D82400D148006F1163 /* CrumbPathRenderer.swift in Sources */,
 				F3D07DA81F3AC60D007CB5D1 /* TripDetail+TableView.swift in Sources */,
 				F3674ADB1F39BC6800684A07 /* TripDetailsViewController.swift in Sources */,
 				4F1BD55020C57E700068AD3E /* MyProfileViewController+ViewAsGroupMember.swift in Sources */,

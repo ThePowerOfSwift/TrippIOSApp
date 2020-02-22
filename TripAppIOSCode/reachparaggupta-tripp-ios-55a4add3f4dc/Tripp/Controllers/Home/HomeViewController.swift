@@ -16,8 +16,9 @@ import AMPopTip
 final class HomeViewController: UIViewController {
     //MARK: ------ variables/IBOutlets
     
-    //@IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var mapView: MKMapView!
+    //@IBOutlet weak var mapView: GMSMapView! //xr
+    @IBOutlet weak var mapView: MKMapView! //xr
+    
     @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var currentLocationButton: UIButton!
     var myLocation: CLLocation?
@@ -28,11 +29,16 @@ final class HomeViewController: UIViewController {
     var markers = [GMSMarker]()
     var shouldClearFilters = false
     var routes = [Route]()
-
+    
+    //xr
+    private var crumbs: CrumbPath?
+    private var crumbPathRenderer: CrumbPathRenderer?
+    private var drawingAreaRenderer: MKPolygonRenderer?
+    
     //MARK: ------ Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.setupUI()
         addNotificationObservers()
@@ -80,11 +86,11 @@ final class HomeViewController: UIViewController {
         //self.mapView.delegate = self //xr
         self.mapView.showsUserLocation = true
         self.mapView.delegate = self
-                
+        
         self.showCurrentLocationOnMapAndFtechRoutes()
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.showNextTip(_:)), name: AppNotification.popTipHide, object: nil)
     }
-
+    
     @objc func tripDeleted(_ notification: Notification){
         if let deletedRoute = notification.userInfo?["trip"] as? Route, deletedRoute.isAddedFromRoute != 0 {
             let objects = routes.filter({$0.tripId == deletedRoute.isAddedFromRoute}) // isAddedFromRoute is key for route id
@@ -125,14 +131,14 @@ final class HomeViewController: UIViewController {
     }
     
     @objc private func showTip(){
-       
+        
         guard let isRouteToolTipShown = AppUserDefaults.value(for: .routeTips) else {
             showRouteMainTip()
             return
         }
         
         guard let shown = isRouteToolTipShown as? Bool, shown == true else {
-           showRouteMainTip()
+            showRouteMainTip()
             return
         }
     }
@@ -159,13 +165,14 @@ final class HomeViewController: UIViewController {
     func updateRouteCounterInfo(isFetching: Bool = false){
         (self.parent as? RoutesBaseViewController)?.topView?.updateRouteCounterInfo(self.routeCounter, isFilter: self.isFilterApplied, isFetching: isFetching)
     }
-   
+    
     /**
      * @method drawRoute
      * @discussion Draw Routes on the map
      */
     func drawRoute(route: Route){
-        self.mapView.drawRoute(route: route)
+        //self.mapView.drawRoute(route: route) //xr
+        self.drawRoute(route: route)
         routes.append(route)
     }
     /**
@@ -216,4 +223,87 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController : MKMapViewDelegate {
     
+    
+    //MARK:-
+    
+       private func coordinateRegionWithCenter(_ centerCoordinate: CLLocationCoordinate2D, approximateRadiusInMeters radiusInMeters: CLLocationDistance) -> MKCoordinateRegion {
+          
+           let radiusInMapPoints = radiusInMeters * MKMapPointsPerMeterAtLatitude(centerCoordinate.latitude)
+           let radiusSquared = MKMapSize(width: radiusInMapPoints, height: radiusInMapPoints)
+           
+           let regionOrigin = MKMapPoint(centerCoordinate)
+           var regionRect = MKMapRect(origin: regionOrigin, size: radiusSquared)
+           
+           regionRect = regionRect.offsetBy(dx: -radiusInMapPoints/2, dy: -radiusInMapPoints/2)
+           
+           // clamp the rect to be within the world
+           regionRect = regionRect.intersection(.world)
+           
+           let region = MKCoordinateRegion(regionRect)
+           return region
+       }
+    
+    func drawRoute(route: Route, onMap objMap: MKMapView){
+        /*if route.drivingMode == TripType.Aerial.rawValue{
+            self.drawAerialTrip(route, shouldClear: false)
+        }else if route.drivingMode == TripType.Sea.rawValue{
+            self.drawSeaTripWithoutClearMap(route)
+        }else if route.drivingMode == TripType.Road.rawValue{
+            if route.role == UserRole.Admin.rawValue{
+                self.drawTrip(route: route, color: route.routeColor())
+            }else if route.role == UserRole.Biker.rawValue{
+                self.drawTrip(route: route, color: UIColor.tripColor())
+            }
+        }*/
+        //-----------------------------------------------------
+        
+        //let newLocation = locations[0]
+        //let newLocation = route.currentLocation?.location
+        var newLocation : CLLocation = CLLocation.init(latitude: route.currentLocation?.location?.latitude, longitude: route.currentLocation?.location?.longitude)
+                
+        if self.crumbs == nil {
+            
+            crumbs = CrumbPath(center: newLocation.coordinate)
+            objMap.add(self.crumbs!, level: .aboveRoads)
+            
+            // on the first location update only, zoom map to user location
+            let newCoordinate = newLocation.coordinate
+            
+            // default -boundingMapRect size is 1km^2 centered on coord
+            let region = self.coordinateRegionWithCenter(newCoordinate, approximateRadiusInMeters: 2500)
+            
+            objMap.setRegion(region, animated: true)
+        } else {
+            
+            var boundingMapRectChanged = false
+            var updateRect = self.crumbs!.addCoordinate(newLocation.coordinate, boundingMapRectChanged: &boundingMapRectChanged)
+            if boundingMapRectChanged {
+                objMap.removeOverlays(objMap.overlays)
+                crumbPathRenderer = nil
+                objMap.add(self.crumbs!, level: .aboveRoads)
+                
+                let r = self.crumbs!.boundingMapRect
+                var pts: [MKMapPoint] = [
+                    MKMapPoint(x: r.minX, y: r.minY),
+                    MKMapPoint(x: r.minX, y: r.maxY),
+                    MKMapPoint(x: r.maxX, y: r.maxY),
+                    MKMapPoint(x: r.maxX, y: r.minY),
+                ]
+                let count = pts.count
+                let boundingMapRectOverlay = MKPolygon(points: &pts, count: count)
+                objMap.add(boundingMapRectOverlay, level: .aboveRoads)
+            } else if !updateRect.isNull {
+                // There is a non null update rect.
+                // Compute the currently visible map zoom scale
+                let currentZoomScale = MKZoomScale(objMap.bounds.size.width / CGFloat(objMap.visibleMapRect.size.width))
+                
+                // Find out the line width at this zoom scale and outset the updateRect by that amount
+                let lineWidth = MKRoadWidthAtZoomScale(currentZoomScale)
+                updateRect = updateRect.insetBy(dx: Double(-lineWidth), dy: Double(-lineWidth))
+                
+                // Ask the overlay view to update just the changed area.
+                self.crumbPathRenderer?.setNeedsDisplay(updateRect)
+            }
+        }
+    }
 }
