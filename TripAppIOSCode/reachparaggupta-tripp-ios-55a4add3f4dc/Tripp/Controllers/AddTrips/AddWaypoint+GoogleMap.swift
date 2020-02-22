@@ -98,19 +98,18 @@ extension AddWaypointToTripViewController: GMSMapViewDelegate{
         marker.isDraggable = isDraggable
        // marker.accessibilityLabel = "current"
         marker.icon = UIImage(named: icMarkerWaypoint)
-        //marker.map = self.mapView //xr
+        marker.map = self.mapView
         return marker
     }
     
     func drawRoute(_ trip: Route){
-        //xr
-        /*if trip.drivingMode == TripType.Road.rawValue{
+        if trip.drivingMode == TripType.Road.rawValue{
             drawRoadTrip(trip)
         }else if trip.drivingMode == TripType.Sea.rawValue{
             self.mapView.drawSeaTrip(trip)
         }else if trip.drivingMode == TripType.Aerial.rawValue{
             self.mapView.drawAerialTrip(trip)
-        }*/
+        }
     }
     func drawRoadTrip(_ trip: Route){
         let routeManager = RoutesManager()
@@ -120,7 +119,7 @@ extension AddWaypointToTripViewController: GMSMapViewDelegate{
             }
             Utils.mainQueue {
                 //self.drawPath(aRoute)
-                //self.mapView.drawTrip(route: aRoute, color: UIColor.tripColor(), shouldClear: true) //xr
+                self.mapView.drawTrip(route: aRoute, color: UIColor.tripColor(), shouldClear: true)
             }
         }
     }
@@ -144,7 +143,7 @@ extension AddWaypointToTripViewController: GMSMapViewDelegate{
             tripPolyline = GMSPolyline(path: path)
             tripPolyline?.isTappable = false
             tripPolyline?.strokeWidth = polylineStrokWidth
-            //tripPolyline?.map = self.mapView //xr
+            tripPolyline?.map = self.mapView
             tripPolyline?.strokeColor = UIColor.tripColor()
         }
         
@@ -156,7 +155,7 @@ extension AddWaypointToTripViewController: GMSMapViewDelegate{
         self.currentDropMarker = GMSMarker(position: endPosition)
         currentDropMarker?.icon = UIImage(named: isMarkerTripEnd)
         currentDropMarker?.isDraggable = true
-        //currentDropMarker?.map = self.mapView //xr
+        currentDropMarker?.map = self.mapView
     }
     //-- Open location alert action
     func openLocationAlertAction(marker: GMSMarker){

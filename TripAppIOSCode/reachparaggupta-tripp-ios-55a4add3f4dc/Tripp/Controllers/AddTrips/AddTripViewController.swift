@@ -13,8 +13,7 @@ import GoogleMaps
 class AddTripViewController: UIViewController {
 
     //MARK: Variables/IBOutlets
-    //@IBOutlet weak var mapView: GMSMapView! //xr
-    @IBOutlet weak var mapView: MKMapView! //xr
+    @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var locationButton: UIButton!
     
@@ -30,7 +29,7 @@ class AddTripViewController: UIViewController {
             self.setupUI()
         }
         self.addObserver()
-        //self.mapView.addMapTypeToggleButton() //xr
+        self.mapView.addMapTypeToggleButton()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,8 +45,7 @@ class AddTripViewController: UIViewController {
     }
     //MARK: ------ Private
     private func setupUI(){
-        //self.mapView.isMyLocationEnabled = true //xr
-        self.mapView.showsUserLocation = true
+        self.mapView.isMyLocationEnabled = true
         self.showCurrentLocationOnMap()
         self.setupHeaderCornerRounded()
     }
@@ -63,8 +61,7 @@ class AddTripViewController: UIViewController {
     private func showCurrentLocationOnMap(){
         LocationManager.sharedManager.currentLocation(complitionHandler: {(location, error) in
             guard let _ = error else {
-                //self.mapView.moveMapToUserlocation(location!) //xr
-                self.mapView.moveMapTolocation(location!) //xr
+                self.mapView.moveMapToUserlocation(location!)
                 return
             }
         })

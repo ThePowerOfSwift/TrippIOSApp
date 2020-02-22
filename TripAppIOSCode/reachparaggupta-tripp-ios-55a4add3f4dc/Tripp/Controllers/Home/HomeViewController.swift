@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import MapKit
-
 import GoogleMaps
 import NRControls
 import AMPopTip
@@ -16,9 +14,7 @@ import AMPopTip
 final class HomeViewController: UIViewController {
     //MARK: ------ variables/IBOutlets
     
-    //@IBOutlet weak var mapView: GMSMapView! //xr
-    @IBOutlet weak var mapView: MKMapView! //xr
-    
+    @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var currentLocationButton: UIButton!
     var myLocation: CLLocation?
@@ -30,11 +26,6 @@ final class HomeViewController: UIViewController {
     var shouldClearFilters = false
     var routes = [Route]()
     
-    //xr
-    private var crumbs: CrumbPath?
-    private var crumbPathRenderer: CrumbPathRenderer?
-    private var drawingAreaRenderer: MKPolygonRenderer?
-    
     //MARK: ------ Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +33,8 @@ final class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.setupUI()
         addNotificationObservers()
-        //self.mapView.addMapTypeToggleButton() //xr
-        //self.mapView.setMinZoom(8.0, maxZoom: 15.0) //xr
+        self.mapView.addMapTypeToggleButton()
+        self.mapView.setMinZoom(8.0, maxZoom: 15.0)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -81,12 +72,8 @@ final class HomeViewController: UIViewController {
         
     }
     private func setupUI(){
-        
-        //self.mapView.isMyLocationEnabled = true //xr
-        //self.mapView.delegate = self //xr
-        self.mapView.showsUserLocation = true
+        self.mapView.isMyLocationEnabled = true
         self.mapView.delegate = self
-        
         self.showCurrentLocationOnMapAndFtechRoutes()
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.showNextTip(_:)), name: AppNotification.popTipHide, object: nil)
     }
@@ -115,8 +102,7 @@ final class HomeViewController: UIViewController {
         LocationManager.sharedManager.currentLocation(complitionHandler: {(location, error) in
             guard let _ = error else{
                 self.myLocation = location
-                //self.mapView.moveMapToUserlocation(location!)//xr
-                self.mapView.moveMapTolocation(location!)
+                self.mapView.moveMapToUserlocation(location!)
                 if let parentVC = self.parent as? RoutesBaseViewController, let topView = parentVC.topView{
                     if topView.selectedTab == .Routes{
                         self.fetchAndDrawRoutes(location!)
@@ -171,9 +157,7 @@ final class HomeViewController: UIViewController {
      * @discussion Draw Routes on the map
      */
     func drawRoute(route: Route){
-        //self.mapView.drawRoute(route: route) //xr
-        //self.drawRoute(route: route)
-        self.drawRoute(route: route, onMap: self.mapView)
+        self.mapView.drawRoute(route: route)
         routes.append(route)
     }
     /**
@@ -222,6 +206,7 @@ final class HomeViewController: UIViewController {
     }
 }
 
+/*
 extension HomeViewController : MKMapViewDelegate {
     
     
@@ -314,3 +299,4 @@ extension HomeViewController : MKMapViewDelegate {
         }
     }
 }
+*/

@@ -245,8 +245,7 @@ extension HomeViewController: GMSMapViewDelegate{
     }
     func fetchRoutesInState(_ state: State){
         let location = CLLocation(latitude: Double(state.lat!)!, longitude: Double(state.lon!)!)
-        //self.mapView.moveMapToUserlocation(location)//xr
-        self.mapView.moveMapTolocation(location)
+        self.mapView.moveMapToUserlocation(location)        
         self.filters = ""
         self.cleanMapView()
         self.fetchAndDrawRoutes(lat: state.lat!, lon: state.lon!)
@@ -281,12 +280,9 @@ extension HomeViewController: GMSMapViewDelegate{
     }
 
     func focusMapToShowAllMarkers(){
-         //mk
-        /*let bounds = self.markers.reduce(GMSCoordinateBounds()) {
+        let bounds = self.markers.reduce(GMSCoordinateBounds()) {
             $0.includingCoordinate($1.position)
         }
         self.mapView.animate(with: .fit(bounds, withPadding: 30))
-        */
-        self.mapView.showAnnotations(self.mapView.annotations, animated: true)
     }
 }

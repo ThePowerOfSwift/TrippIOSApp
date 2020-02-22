@@ -164,7 +164,7 @@
 		4FE830FA1F1F614200730A24 /* AddTripNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE830F91F1F614200730A24 /* AddTripNameViewController.swift */; };
 		4FF563B91F0A5ACA00BD8494 /* AppDelegate+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF563B81F0A5ACA00BD8494 /* AppDelegate+Notification.swift */; };
 		881F9D472400E8A0000C6C68 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 881F9D462400E8A0000C6C68 /* MapKit.framework */; };
-		881F9D4A2400F841000C6C68 /* AppInfo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 881F9D492400F841000C6C68 /* AppInfo.txt */; };
+		881F9D4C24010F9D000C6C68 /* AppInfo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 881F9D4B24010F9C000C6C68 /* AppInfo.txt */; };
 		8899D83D24006468005C6ADC /* MKMapView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899D83C24006468005C6ADC /* MKMapView+Extensions.swift */; };
 		88D1F8D72400D148006F1163 /* CrumbPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D1F8D52400D147006F1163 /* CrumbPath.swift */; };
 		88D1F8D82400D148006F1163 /* CrumbPathRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D1F8D62400D148006F1163 /* CrumbPathRenderer.swift */; };
@@ -536,7 +536,7 @@
 		52F5E1D5DA868E2F35036E0C /* Pods-Tripp.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tripp.staging.xcconfig"; path = "Pods/Target Support Files/Pods-Tripp/Pods-Tripp.staging.xcconfig"; sourceTree = "<group>"; };
 		5A4FB99B91D04EB09CC943E1 /* Pods_Tripp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tripp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		881F9D462400E8A0000C6C68 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		881F9D492400F841000C6C68 /* AppInfo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AppInfo.txt; path = ../../../../AppDocs/AppInfo.txt; sourceTree = "<group>"; };
+		881F9D4B24010F9C000C6C68 /* AppInfo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppInfo.txt; sourceTree = "<group>"; };
 		8899D83C24006468005C6ADC /* MKMapView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extensions.swift"; sourceTree = "<group>"; };
 		88D1F8D52400D147006F1163 /* CrumbPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrumbPath.swift; sourceTree = "<group>"; };
 		88D1F8D62400D148006F1163 /* CrumbPathRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrumbPathRenderer.swift; sourceTree = "<group>"; };
@@ -1169,7 +1169,7 @@
 		881F9D482400F836000C6C68 /* AppDocs */ = {
 			isa = PBXGroup;
 			children = (
-				881F9D492400F841000C6C68 /* AppInfo.txt */,
+				881F9D4B24010F9C000C6C68 /* AppInfo.txt */,
 			);
 			path = AppDocs;
 			sourceTree = "<group>";
@@ -2207,7 +2207,6 @@
 				F3A680711EF24B2700B297A6 /* OpenSans-BoldItalic.ttf in Resources */,
 				4FBBC25C200508D3004583EE /* LaunchScreen.storyboard in Resources */,
 				F3A680781EF24B2700B297A6 /* OpenSans-Semibold.ttf in Resources */,
-				881F9D4A2400F841000C6C68 /* AppInfo.txt in Resources */,
 				4F5545E71EF927B9008C03CC /* RoutesTopView.xib in Resources */,
 				F3A680721EF24B2700B297A6 /* OpenSans-ExtraBold.ttf in Resources */,
 				F3994B7B1F2084E0006FF60C /* AddTripTopBar.xib in Resources */,
@@ -2251,6 +2250,7 @@
 				4F1234BC1F25F49B00F4511E /* AddRoutesAlertPopupView.xib in Resources */,
 				4F5545D31EF91782008C03CC /* SF-UI-Text-Light.otf in Resources */,
 				4FA271391F061C8C00155ED0 /* GoogleService-Info.plist in Resources */,
+				881F9D4C24010F9D000C6C68 /* AppInfo.txt in Resources */,
 				F35E7B3E1EFBC06900C5C273 /* PopupViewController.xib in Resources */,
 				F3A680751EF24B2700B297A6 /* OpenSans-Light.ttf in Resources */,
 				4FBCF66C1F0E243700C3D679 /* RouteDetailPopupView.xib in Resources */,

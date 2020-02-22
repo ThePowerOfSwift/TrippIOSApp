@@ -37,9 +37,6 @@
                                 <rect key="frame" x="0.0" y="62" width="375" height="605"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aNn-bj-Z2O">
-                                <rect key="frame" x="0.0" y="62" width="375" height="605"/>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fku-UH-5Iy">
                                 <rect key="frame" x="294" y="582" width="63" height="63"/>
                                 <constraints>
@@ -100,15 +97,11 @@
                             <constraint firstItem="RUj-lB-kWI" firstAttribute="top" secondItem="KlH-aa-G1F" secondAttribute="top" constant="-20" id="2L5-yP-PXU"/>
                             <constraint firstItem="RUj-lB-kWI" firstAttribute="leading" secondItem="KlH-aa-G1F" secondAttribute="leading" id="5na-mj-EQI"/>
                             <constraint firstItem="KlH-aa-G1F" firstAttribute="trailing" secondItem="RUj-lB-kWI" secondAttribute="trailing" id="9A7-wQ-S9c"/>
-                            <constraint firstItem="aNn-bj-Z2O" firstAttribute="top" secondItem="KlH-aa-G1F" secondAttribute="top" constant="62" id="Bn8-PP-RXX"/>
                             <constraint firstItem="qBe-6K-2Da" firstAttribute="leading" secondItem="KlH-aa-G1F" secondAttribute="leading" id="Lcu-NE-p3B"/>
-                            <constraint firstItem="KlH-aa-G1F" firstAttribute="bottom" secondItem="aNn-bj-Z2O" secondAttribute="bottom" id="Sat-VM-2Dv"/>
-                            <constraint firstItem="aNn-bj-Z2O" firstAttribute="leading" secondItem="KlH-aa-G1F" secondAttribute="leading" id="aPw-8n-jhM"/>
                             <constraint firstItem="qBe-6K-2Da" firstAttribute="top" secondItem="KlH-aa-G1F" secondAttribute="top" constant="62" id="fPg-8Q-ExE"/>
                             <constraint firstItem="KlH-aa-G1F" firstAttribute="bottom" secondItem="qBe-6K-2Da" secondAttribute="bottom" id="hX4-wb-FyX"/>
                             <constraint firstItem="KlH-aa-G1F" firstAttribute="trailing" secondItem="fku-UH-5Iy" secondAttribute="trailing" constant="18" id="i2w-wu-oXd"/>
                             <constraint firstItem="KlH-aa-G1F" firstAttribute="trailing" secondItem="qBe-6K-2Da" secondAttribute="trailing" id="il1-6w-Nyl"/>
-                            <constraint firstItem="KlH-aa-G1F" firstAttribute="trailing" secondItem="aNn-bj-Z2O" secondAttribute="trailing" id="joD-bn-wfd"/>
                             <constraint firstItem="KlH-aa-G1F" firstAttribute="bottom" secondItem="fku-UH-5Iy" secondAttribute="bottom" constant="22" id="tND-Gp-4tk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KlH-aa-G1F"/>
@@ -116,7 +109,7 @@
                     <connections>
                         <outlet property="headerView" destination="RUj-lB-kWI" id="Iw0-Um-sBd"/>
                         <outlet property="locationButton" destination="fku-UH-5Iy" id="Rq6-S2-69z"/>
-                        <outlet property="mapView" destination="aNn-bj-Z2O" id="9Yt-vX-D68"/>
+                        <outlet property="mapView" destination="qBe-6K-2Da" id="SBG-Td-kjN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gs1-zR-LuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,10 +129,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5hV-QJ-pxG">
-                                <rect key="frame" x="0.0" y="61" width="375" height="606"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Bb9-db-60F" id="PdO-H0-l11"/>
-                                </connections>
+                                <rect key="frame" x="100" y="61" width="175" height="606"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv4-Ga-ah8">
                                 <rect key="frame" x="294" y="432" width="63" height="63"/>
@@ -157,10 +147,10 @@
                         <constraints>
                             <constraint firstItem="vYd-h6-NTh" firstAttribute="bottom" secondItem="jUt-Yb-fAJ" secondAttribute="bottom" id="137-0W-tle"/>
                             <constraint firstItem="vYd-h6-NTh" firstAttribute="trailing" secondItem="mv4-Ga-ah8" secondAttribute="trailing" constant="18" id="CWt-ye-Juo"/>
-                            <constraint firstItem="5hV-QJ-pxG" firstAttribute="leading" secondItem="vYd-h6-NTh" secondAttribute="leading" id="Lot-1v-L9w"/>
+                            <constraint firstItem="5hV-QJ-pxG" firstAttribute="leading" secondItem="vYd-h6-NTh" secondAttribute="leading" constant="100" id="Lot-1v-L9w"/>
                             <constraint firstItem="jUt-Yb-fAJ" firstAttribute="leading" secondItem="vYd-h6-NTh" secondAttribute="leading" id="Xmm-Ny-h0D"/>
                             <constraint firstItem="vYd-h6-NTh" firstAttribute="trailing" secondItem="jUt-Yb-fAJ" secondAttribute="trailing" id="ceO-3f-KRc"/>
-                            <constraint firstItem="5hV-QJ-pxG" firstAttribute="trailing" secondItem="vYd-h6-NTh" secondAttribute="trailing" id="hkb-P7-Ld9"/>
+                            <constraint firstItem="5hV-QJ-pxG" firstAttribute="trailing" secondItem="vYd-h6-NTh" secondAttribute="trailing" constant="-100" id="hkb-P7-Ld9"/>
                             <constraint firstItem="vYd-h6-NTh" firstAttribute="bottom" secondItem="mv4-Ga-ah8" secondAttribute="bottom" constant="172" id="iHL-BQ-Ypw"/>
                             <constraint firstItem="5hV-QJ-pxG" firstAttribute="top" secondItem="vYd-h6-NTh" secondAttribute="top" constant="61" id="pPj-LT-How"/>
                             <constraint firstItem="jUt-Yb-fAJ" firstAttribute="top" secondItem="vYd-h6-NTh" secondAttribute="top" constant="61" id="wXg-nT-7by"/>
@@ -171,7 +161,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="locationButton" destination="mv4-Ga-ah8" id="K1Y-ZT-5du"/>
-                        <outlet property="mapView" destination="5hV-QJ-pxG" id="aE0-JD-0Xt"/>
+                        <outlet property="mapView" destination="jUt-Yb-fAJ" id="2lD-75-L4e"/>
+                        <outlet property="mapView_apple" destination="5hV-QJ-pxG" id="hO5-5P-ta6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdX-el-VES" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1056,7 +1047,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdW-cP-NGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2152.8000000000002" y="889.20539730134942"/>
+            <point key="canvasLocation" x="2252" y="911"/>
         </scene>
         <!--Add Trip Walk Through View Controller-->
         <scene sceneID="mJY-3Z-FoH">

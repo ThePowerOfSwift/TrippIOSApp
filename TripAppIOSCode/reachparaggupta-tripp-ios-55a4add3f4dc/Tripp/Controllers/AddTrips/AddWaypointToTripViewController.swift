@@ -14,8 +14,8 @@ import RealmSwift
 
 class AddWaypointToTripViewController: UIViewController {
     //MARK: Variables/IBOutlets
-    //@IBOutlet weak var mapView: GMSMapView! //xr
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var mapView_apple: MKMapView!
     @IBOutlet weak var locationButton: UIButton!
     
     var trip: Route?
@@ -46,7 +46,11 @@ class AddWaypointToTripViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        //self.mapView.addMapTypeToggleButton() //xr
+        self.mapView.addMapTypeToggleButton()
+        
+        //xr
+        self.mapView_apple.delegate = self
+        self.mapView_apple.showsUserLocation = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,12 +71,8 @@ class AddWaypointToTripViewController: UIViewController {
         if let myTrip = trip{
             self.topBar.fillTripDetails(name: myTrip.name, date: myTrip.tripDate, tripType: TripType(rawValue: myTrip.drivingMode)!)
         }
-        //xr
-        //self.mapView.delegate = self
-        //self.mapView.isMyLocationEnabled = true
         self.mapView.delegate = self
-        self.mapView.showsUserLocation = true
-        
+        self.mapView.isMyLocationEnabled = true
         topBar.searchField.delegate = self
         topBar.searchField.addTarget(self, action: #selector(AddWaypointToTripViewController.textFieldDidChange(_:)), for: .editingChanged)
         topBar.closeButton.addTarget(self, action: #selector(AddWaypointToTripViewController.closeButtonTapped(_:)), for: .touchUpInside)
@@ -96,8 +96,7 @@ class AddWaypointToTripViewController: UIViewController {
             self.topBar.tripDateTextField.isHidden = false
             self.topBar.nameLabel.isHidden = true
             self.topBar.dateLabel.isHidden = true
-            //self.mapView.moveCameraOnCurrentPath(route: self.trip!) //xr
-            self.mapView.moveOnCurrentPath(route: self.trip!) //xr
+            self.mapView.moveCameraOnCurrentPath(route: self.trip!)
             
             self.displayWaypointAndRoutes()
             
@@ -123,8 +122,7 @@ class AddWaypointToTripViewController: UIViewController {
     private func showCurrentLocationOnMap(){
         LocationManager.sharedManager.currentLocation(complitionHandler: {(location, error) in
             guard let _ = error else{
-                //self.mapView.moveMapToUserlocation(location!) //xr
-                self.mapView.moveMapTolocation(location!)
+                self.mapView.moveMapToUserlocation(location!)
                 return
             }
         })
@@ -356,5 +354,19 @@ class AddWaypointToTripViewController: UIViewController {
 
 
 extension AddWaypointToTripViewController : MKMapViewDelegate {
-    //MARK:-
+    //TODO: Long presee to add pin
+    /*func manage_addPin() {
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(addWaypoint(longGesture:)))
+        mapView.addGestureRecognizer(longGesture)
+    }
+    @objc func addWaypoint(longGesture: UIGestureRecognizer) {
+        let touchPoint = longGesture.location(in: mapView)
+        let wayCoords = mapView_apple.convert(touchPoint, toCoordinateFrom: mapView)
+        //let location = CLLocation(latitude: wayCoords.latitude, longitude: wayCoords.longitude)
+        
+        let wayAnnotation = MKPointAnnotation()
+        wayAnnotation.coordinate = wayCoords
+        wayAnnotation.title = ""
+        self.mapView_apple.addAnnotation(wayAnnotation)
+    }*/
 }
