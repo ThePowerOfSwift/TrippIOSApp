@@ -163,6 +163,8 @@
 		4FE830F81F1F567700730A24 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE830F71F1F567700730A24 /* AddTripViewController.swift */; };
 		4FE830FA1F1F614200730A24 /* AddTripNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE830F91F1F614200730A24 /* AddTripNameViewController.swift */; };
 		4FF563B91F0A5ACA00BD8494 /* AppDelegate+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF563B81F0A5ACA00BD8494 /* AppDelegate+Notification.swift */; };
+		881F9D472400E8A0000C6C68 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 881F9D462400E8A0000C6C68 /* MapKit.framework */; };
+		881F9D4A2400F841000C6C68 /* AppInfo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 881F9D492400F841000C6C68 /* AppInfo.txt */; };
 		8899D83D24006468005C6ADC /* MKMapView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899D83C24006468005C6ADC /* MKMapView+Extensions.swift */; };
 		88D1F8D72400D148006F1163 /* CrumbPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D1F8D52400D147006F1163 /* CrumbPath.swift */; };
 		88D1F8D82400D148006F1163 /* CrumbPathRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D1F8D62400D148006F1163 /* CrumbPathRenderer.swift */; };
@@ -533,6 +535,8 @@
 		4FF563B81F0A5ACA00BD8494 /* AppDelegate+Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Notification.swift"; sourceTree = "<group>"; };
 		52F5E1D5DA868E2F35036E0C /* Pods-Tripp.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tripp.staging.xcconfig"; path = "Pods/Target Support Files/Pods-Tripp/Pods-Tripp.staging.xcconfig"; sourceTree = "<group>"; };
 		5A4FB99B91D04EB09CC943E1 /* Pods_Tripp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tripp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		881F9D462400E8A0000C6C68 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		881F9D492400F841000C6C68 /* AppInfo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AppInfo.txt; path = ../../../../AppDocs/AppInfo.txt; sourceTree = "<group>"; };
 		8899D83C24006468005C6ADC /* MKMapView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extensions.swift"; sourceTree = "<group>"; };
 		88D1F8D52400D147006F1163 /* CrumbPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrumbPath.swift; sourceTree = "<group>"; };
 		88D1F8D62400D148006F1163 /* CrumbPathRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrumbPathRenderer.swift; sourceTree = "<group>"; };
@@ -753,6 +757,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				881F9D472400E8A0000C6C68 /* MapKit.framework in Frameworks */,
 				E00FF704D73576709B6938B6 /* Pods_Tripp.framework in Frameworks */,
 				F31D027720EF8DDD0065D493 /* StoreKit.framework in Frameworks */,
 			);
@@ -1159,6 +1164,14 @@
 				52F5E1D5DA868E2F35036E0C /* Pods-Tripp.staging.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		881F9D482400F836000C6C68 /* AppDocs */ = {
+			isa = PBXGroup;
+			children = (
+				881F9D492400F841000C6C68 /* AppInfo.txt */,
+			);
+			path = AppDocs;
 			sourceTree = "<group>";
 		};
 		F302ABF31F1333A500E008B5 /* RouteDetailsTopBar */ = {
@@ -1866,6 +1879,7 @@
 		F3908EBE1EEFE803002E69F9 /* Tripp */ = {
 			isa = PBXGroup;
 			children = (
+				881F9D482400F836000C6C68 /* AppDocs */,
 				F36C62EA1F2EF808009552EE /* Tripp.entitlements */,
 				F3908ED11EEFE84C002E69F9 /* Application */,
 				F3908ED81EEFE98F002E69F9 /* Library */,
@@ -2101,6 +2115,7 @@
 		F6DB3BC2771F239F273347D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				881F9D462400E8A0000C6C68 /* MapKit.framework */,
 				F31D027620EF8DDD0065D493 /* StoreKit.framework */,
 				5A4FB99B91D04EB09CC943E1 /* Pods_Tripp.framework */,
 			);
@@ -2192,6 +2207,7 @@
 				F3A680711EF24B2700B297A6 /* OpenSans-BoldItalic.ttf in Resources */,
 				4FBBC25C200508D3004583EE /* LaunchScreen.storyboard in Resources */,
 				F3A680781EF24B2700B297A6 /* OpenSans-Semibold.ttf in Resources */,
+				881F9D4A2400F841000C6C68 /* AppInfo.txt in Resources */,
 				4F5545E71EF927B9008C03CC /* RoutesTopView.xib in Resources */,
 				F3A680721EF24B2700B297A6 /* OpenSans-ExtraBold.ttf in Resources */,
 				F3994B7B1F2084E0006FF60C /* AddTripTopBar.xib in Resources */,

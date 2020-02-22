@@ -100,11 +100,11 @@ extension AddWaypointToTripViewController: UITextFieldDelegate{
                 self.topBar.searchField.text = ""
                 let waypointsCount = self.trip!.waypoints.count
                 if waypointsCount == 0 || waypointsCount == 1 {
-                    self.mapView.moveMapToUserlocation(CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude))
+                    //self.mapView.moveMapToUserlocation(CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)) //xr
                 } else if waypointsCount <= 25 {
                     if let startLocation = self.trip?.waypoints.first?.location(), let endLocation = self.trip?.waypoints.last?.location() {
                         
-                        self.mapView.setCameraPositionFor(location1: startLocation, location2: endLocation)
+                        //self.mapView.setCameraPositionFor(location1: startLocation, location2: endLocation) //xr
                     }
                 }
             })
@@ -156,7 +156,7 @@ extension AddWaypointToTripViewController {
             if search.count <= 0{
                 Utils.mainQueue {
                     self?.completedRoutes.append(aRoute)
-                    self?.mapView.drawRoute(route: aRoute)
+                    //self?.mapView.drawRoute(route: aRoute) //xr
                 }
             }
             

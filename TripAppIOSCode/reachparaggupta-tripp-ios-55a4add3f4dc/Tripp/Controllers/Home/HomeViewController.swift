@@ -172,7 +172,8 @@ final class HomeViewController: UIViewController {
      */
     func drawRoute(route: Route){
         //self.mapView.drawRoute(route: route) //xr
-        self.drawRoute(route: route)
+        //self.drawRoute(route: route)
+        self.drawRoute(route: route, onMap: self.mapView)
         routes.append(route)
     }
     /**
@@ -226,43 +227,48 @@ extension HomeViewController : MKMapViewDelegate {
     
     //MARK:-
     
-       private func coordinateRegionWithCenter(_ centerCoordinate: CLLocationCoordinate2D, approximateRadiusInMeters radiusInMeters: CLLocationDistance) -> MKCoordinateRegion {
-          
-           let radiusInMapPoints = radiusInMeters * MKMapPointsPerMeterAtLatitude(centerCoordinate.latitude)
-           let radiusSquared = MKMapSize(width: radiusInMapPoints, height: radiusInMapPoints)
-           
-           let regionOrigin = MKMapPoint(centerCoordinate)
-           var regionRect = MKMapRect(origin: regionOrigin, size: radiusSquared)
-           
-           regionRect = regionRect.offsetBy(dx: -radiusInMapPoints/2, dy: -radiusInMapPoints/2)
-           
-           // clamp the rect to be within the world
-           regionRect = regionRect.intersection(.world)
-           
-           let region = MKCoordinateRegion(regionRect)
-           return region
-       }
+    private func coordinateRegionWithCenter(_ centerCoordinate: CLLocationCoordinate2D, approximateRadiusInMeters radiusInMeters: CLLocationDistance) -> MKCoordinateRegion {
+        
+        let radiusInMapPoints = radiusInMeters * MKMapPointsPerMeterAtLatitude(centerCoordinate.latitude)
+        let radiusSquared = MKMapSize(width: radiusInMapPoints, height: radiusInMapPoints)
+        
+        let regionOrigin = MKMapPointForCoordinate(centerCoordinate)
+        var regionRect = MKMapRect(origin: regionOrigin, size: radiusSquared)
+        
+        //regionRect = regionRect.MKMapRectOffset(dx: -radiusInMapPoints/2, dy: -radiusInMapPoints/2)
+        regionRect = MKMapRectOffset(regionRect, -radiusInMapPoints/2, -radiusInMapPoints/2)
+        
+        // clamp the rect to be within the world
+        //regionRect = regionRect.intersection(.MKMapRectWorld)
+         regionRect = MKMapRectIntersection(regionRect, MKMapRectWorld);
+        
+        let region = MKCoordinateRegionForMapRect(regionRect)
+        return region
+    }
     
     func drawRoute(route: Route, onMap objMap: MKMapView){
         /*if route.drivingMode == TripType.Aerial.rawValue{
-            self.drawAerialTrip(route, shouldClear: false)
-        }else if route.drivingMode == TripType.Sea.rawValue{
-            self.drawSeaTripWithoutClearMap(route)
-        }else if route.drivingMode == TripType.Road.rawValue{
-            if route.role == UserRole.Admin.rawValue{
-                self.drawTrip(route: route, color: route.routeColor())
-            }else if route.role == UserRole.Biker.rawValue{
-                self.drawTrip(route: route, color: UIColor.tripColor())
-            }
-        }*/
+         self.drawAerialTrip(route, shouldClear: false)
+         }else if route.drivingMode == TripType.Sea.rawValue{
+         self.drawSeaTripWithoutClearMap(route)
+         }else if route.drivingMode == TripType.Road.rawValue{
+         if route.role == UserRole.Admin.rawValue{
+         self.drawTrip(route: route, color: route.routeColor())
+         }else if route.role == UserRole.Biker.rawValue{
+         self.drawTrip(route: route, color: UIColor.tripColor())
+         }
+         }*/
         //-----------------------------------------------------
         
         //let newLocation = locations[0]
         //let newLocation = route.currentLocation?.location
-        var newLocation : CLLocation = CLLocation.init(latitude: route.currentLocation?.location?.latitude, longitude: route.currentLocation?.location?.longitude)
-                
+        guard let location = route.currentLocation?.location else {
+            print("No Location lat-log")
+            return
+        }
+        let newLocation : CLLocation = CLLocation.init(latitude: location.latitude, longitude: location.longitude)
+        
         if self.crumbs == nil {
-            
             crumbs = CrumbPath(center: newLocation.coordinate)
             objMap.add(self.crumbs!, level: .aboveRoads)
             
@@ -299,10 +305,11 @@ extension HomeViewController : MKMapViewDelegate {
                 
                 // Find out the line width at this zoom scale and outset the updateRect by that amount
                 let lineWidth = MKRoadWidthAtZoomScale(currentZoomScale)
-                updateRect = updateRect.insetBy(dx: Double(-lineWidth), dy: Double(-lineWidth))
+                //updateRect = updateRect.MKMapRectInset(dx: Double(-lineWidth), dy: Double(-lineWidth))
+                updateRect = MKMapRectInset(updateRect, Double(-lineWidth), Double(-lineWidth))
                 
                 // Ask the overlay view to update just the changed area.
-                self.crumbPathRenderer?.setNeedsDisplay(updateRect)
+                self.crumbPathRenderer?.setNeedsDisplayIn(updateRect)
             }
         }
     }

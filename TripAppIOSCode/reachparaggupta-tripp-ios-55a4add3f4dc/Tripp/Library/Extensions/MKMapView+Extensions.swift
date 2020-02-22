@@ -23,6 +23,21 @@ extension MKMapView {
         self.setRegion(region, animated: true)
     }
     
+    func moveOnCurrentPath(route: Route){
+        /*if route.drivingMode == TripType.Road.rawValue {
+            guard let polyline = route.polylineString else {
+                return
+            }
+            guard let path = GMSPath(fromEncodedPath: polyline as String) else {
+                return
+            }
+            self.setCameraPositionFor(path: path)
+        }
+        else{
+            self.setCameraPositionFor(location1: route.startCoordinate(), location2: route.endCoordinate())
+        }*/
+    }
+    
     func clear() {
         self.clear_annotations()
         self.clear_overlays()
